@@ -35,5 +35,4 @@ public class ChargingStationController {
         return new ResponseEntity<>(chargingStationService.getRequestStatus(chargingRequestId),
                 HttpStatus.OK);
     }
-
 }

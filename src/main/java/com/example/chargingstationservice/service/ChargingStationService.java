@@ -6,6 +6,8 @@ import com.example.chargingstationservice.repository.ChargingRequestRepository;
 import com.example.chargingstationservice.repository.ChargingStationRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class ChargingStationService {
 
@@ -20,14 +22,15 @@ public class ChargingStationService {
     }
 
     public ChargingStation getChargingStationInfo(int chargingStationId) {
-        return  chargingStationRepository.findById(chargingStationId).get();
+        return  chargingStationRepository.findById(chargingStationId).orElse(null);
     }
 
     public ChargingRequest createChargingRequest(ChargingRequest chargingRequest) {
+        chargingRequest.setStatus("REQUEST_CREATED");
         return chargingRequestRepository.save(chargingRequest);
     }
 
     public ChargingRequest getRequestStatus(int chargingRequestId) {
-        return chargingRequestRepository.findById(chargingRequestId).get();
+        return chargingRequestRepository.findById(chargingRequestId).orElse(null);
     }
 }
