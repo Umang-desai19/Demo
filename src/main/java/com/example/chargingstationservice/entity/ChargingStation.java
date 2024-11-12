@@ -21,4 +21,60 @@ public class ChargingStation {
     private int availability;
     private int chargingSpeed;
     private String address;
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public int getAvailability() {
+        return availability;
+    }
+
+    public int getChargingSpeed() {
+        return chargingSpeed;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+
+    public void setChargingSpeed(int chargingSpeed) {
+        this.chargingSpeed = chargingSpeed;
+    }
+
+    public void setAvailability(int availability) {
+        this.availability = availability;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
 }
