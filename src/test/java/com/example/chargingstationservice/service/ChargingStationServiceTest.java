@@ -8,7 +8,6 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -83,7 +82,7 @@ class ChargingStationServiceTest {
         Assertions.assertThat(response).hasFieldOrPropertyWithValue("carId", 1)
                 .hasFieldOrPropertyWithValue("chargingStationId", 1)
                 .hasFieldOrPropertyWithValue("duration", 60)
-                .hasFieldOrPropertyWithValue("requestId", 1)
+                .hasFieldOrPropertyWithValue("requestId", 10)
                 .hasFieldOrPropertyWithValue("status", "REQUEST_CREATED");
 
         Mockito.verify(chargingRequestRepository, Mockito.times(1))

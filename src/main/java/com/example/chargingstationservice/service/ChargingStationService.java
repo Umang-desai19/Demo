@@ -6,8 +6,6 @@ import com.example.chargingstationservice.repository.ChargingRequestRepository;
 import com.example.chargingstationservice.repository.ChargingStationRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
 @Service
 public class ChargingStationService {
 

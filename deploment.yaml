@@ -16,12 +16,35 @@ spec:
         app: spring-app
     spec:
       containers:
-        - name: title
-          image: springimg:latest
+        - name: spring-app-service
+          image: csserviceimg:latest
           imagePullPolicy: Never
           ports:
             - containerPort: 8086
               hostPort: 8086
               protocol: TCP
+          resources:
+            limits:
+              ephemeral-storage: "1Gi"
+              memory: 500Mi
+          env:
+            - name: DB_URL
+              value: "123"
       restartPolicy: Always
-      
+      automountServiceAccountToken: false
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: spring-app-service
+  namespace: default
+spec:
+  selector:
+    app: spring-app
+  ports:
+    - name: http
+      port: 8056
+      targetPort: 8056
+      nodePort: 30005
+      protocol: TCP
+  type: NodePort

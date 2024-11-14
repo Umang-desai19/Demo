@@ -23,7 +23,7 @@ public class ChargingRequest {
     private LocalDateTime startTime;
     private LocalDateTime endTime;
     private Long remainingTime;
-    private String BatteryStatus;
+    private String batteryStatus;
     private int percentComplete;
     private String status;
 }
